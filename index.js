@@ -4,13 +4,13 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require( "./lib/Intern");
 
-//const team = [];
+const team = [];
 
 
-//function initApp() {
-  //  startHtml();
-    //addTeamMember();
-//}
+function initApp() {
+   startHtml();
+    addTeamMember();
+}
 
 function addTeamMember() {
     inquirer.prompt([{
@@ -27,4 +27,5 @@ function addTeamMember() {
         "Manager",
     ],
 
+          name: "role"
 }
