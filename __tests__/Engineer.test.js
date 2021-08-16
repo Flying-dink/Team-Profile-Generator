@@ -7,7 +7,7 @@ class Engineer extends Employee {
 
         //calling employee constructor 
         this. name, id, email;
-        this.github = github;
+        super.github = github;
          
         //returning github from input
         getGithub (); {
@@ -18,9 +18,9 @@ class Engineer extends Employee {
     } 
      //Override employee role to engineer
     getRole () {
-        return "engineer";
+        return "Engineer";
     }
 
 }
 //to be exported
-module.exports = engineer;
+module.exports = Engineer;

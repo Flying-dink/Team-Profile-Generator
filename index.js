@@ -85,7 +85,7 @@ const generateHTML =require('./src/templateHelper')
 
      ])}
 
-     .then(managerInput => {
+     then(managerInput => {
          const { name, id, email, officeNumber } = managerInput;
          const manager = new Manager (name, id, email, officeNumber);
 
