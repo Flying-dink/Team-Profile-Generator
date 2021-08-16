@@ -97,7 +97,7 @@ const generateHTML =require('./src/templateHelper')
      })
     
     //Adding  employees to the team
-     const addEmplyoee = ()=> {
+     const addEmployee = ()=> {
      console.log("adding employees to the team");
          return inquirer.prompt ([
              {
@@ -203,6 +203,6 @@ addManager(
 
     });
 
-
+     }
     
 
