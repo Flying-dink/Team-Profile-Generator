@@ -190,7 +190,7 @@ const generateHTML =require('./src/templateHelper')
 };
 
 addManager(
-    .then(addEmployee)
+    then(addEmployee)
     .then(teamArray => {
         return generateHTML(teamArray);
 
@@ -201,7 +201,7 @@ addManager(
     .catch(err=> {
         console.log(err);
 
-    });
+    }))
 
      }
     
