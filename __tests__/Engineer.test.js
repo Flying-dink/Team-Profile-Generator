@@ -1,6 +1,6 @@
 //using Engineer constructor
 
-const Engineer = require('../lib/Engineer');
+const Engineer = require('../lib/Engineer.js');
 
 //creating engineer object
 test('creates an Engineer object',  () => {
@@ -21,3 +21,7 @@ test('gets role of employee' , () => {
     expect(engineer.getRole()).toEqual("Engineer");
 
 });
+
+module.export = {
+    Engineer
+}

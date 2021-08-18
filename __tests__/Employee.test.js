@@ -1,6 +1,6 @@
 //using Employee constructor
 
-const Employee = require('../lib/Employee');
+const Employee = require('../lib/Employee.js');
 
 
 //creates employee object
