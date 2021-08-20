@@ -171,11 +171,11 @@ const generateHTML =require('./src/templateHelper')
         }else{
             return teamArray;
         }
-    })
+    
 
 
     //function to generate HTML page fie using file system
-    const writeFile = data => {
+    const writeFile =( data => {
     fs.writeFile('./dist/index.html', data, err => {
       //if there is an error
       if (err) {
@@ -187,7 +187,7 @@ const generateHTML =require('./src/templateHelper')
 
       }  
     })
-};
+});
 
 addManager(
     then(addEmployee)
@@ -203,6 +203,6 @@ addManager(
 
     }))
 
-     }
+     
     
-
+    

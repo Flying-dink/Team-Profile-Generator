@@ -1,33 +1,38 @@
 //using Employee constructor
 
 const Employee = require('../lib/Employee.js');
+const employee = new Employee('Bob', 1, "Bobtest.com");
 
 
-//creates employee object
-test('creates an employee object', () => {
-    const employee = new Employee('');
 
-    expect(employee.name).toEqual(expect.any(String));
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employy.email).toEqual(expect.any(String));
+
+
+
+test("creates an employee object", () => {
+    expect(employee).toEqual(expect.any(object));
+});  
+
+test("Employee object has a valid name", () => {
+    expect(employee.name).toBe("Bob");
+    expect(employee.getName()).toEqual(employee.name);
 });
 
-//gets id from get id()
-test('gets employee name' , () => {
-    const employee = new Employee();
-    expect(employee.getName()).toEqual(expect.any(String));
-}) 
+test("Employee Object has a valid id", () => {
 
-//gets emails form getEmail()
-test('gets employee email' ,() => {
-    const employee = new Employee('Catherine');
 
-    expect(employee.getEmail()).toEqual(expect.stringContaining(employee.email.toString()));
+    expect(employee.id).toBe(1);
+
+    expect(employee.getId()).toEqual(employee.name);
 });
 
-//gets role from getRole()
-test('gets role of employee' ,() => {
-    const employee = new Employee ('Catherine');
+
+test("Employee object has a valid email" , () => {
+    expect(employee.email).toBe("Bobtest.com");
+    expect(employee.getEmail()).toEqual(employee.email);
+}); 
+
+
+test( "Employee object has a valid role" , () => {
+    expect(employee.getRole()).toEqual("Employee");
     
-    expect (employee.getRole()).toEqual("Employee");
 });
