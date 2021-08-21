@@ -9,7 +9,7 @@ const employee = new Employee('Bob', 1, "Bobtest.com");
 
 
 test("creates an employee object", () => {
-    expect(employee).toEqual(expect.any(object));
+    expect(typeof(employee)).toEqual("object");
 });  
 
 test("Employee object has a valid name", () => {
@@ -22,7 +22,7 @@ test("Employee Object has a valid id", () => {
 
     expect(employee.id).toBe(1);
 
-    expect(employee.getId()).toEqual(employee.name);
+    expect(employee.getId()).toEqual(employee.id);
 });
 
 

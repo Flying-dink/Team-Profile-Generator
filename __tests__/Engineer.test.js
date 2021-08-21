@@ -2,6 +2,7 @@
 
 const Engineer = require('../lib/Engineer.js');
 
+
 //creating engineer object
 //test('creates an Engineer object',  () => {
   //  const engineer = new Engineer();
@@ -22,34 +23,38 @@ const Engineer = require('../lib/Engineer.js');
 
 //});
 
-//module.export = {
-  //  Engineer
+//
 //}
 test("creates an Engineer object", () => {
-    expect(employee).toEqual(expect.any(object));
+  const engineer = new Engineer()
+  expect(typeof(engineer)).toEqual("object");
 });  
 
 test("Engineer object has a valid name", () => {
-    expect(engineer.name).toBe("Bob");
+  const engineer = new Engineer()
+    
     expect(engineer.getName()).toEqual(engineer.name);
 });
 
 test("Engineer Object has a valid id", () => {
-
-
-    expect(engineer.id).toBe(1);
-
-    expect(engineer.getId()).toEqual(engineer.name);
+  const engineer = new Engineer()
+  
+  expect(engineer.getId()).toEqual(engineer.id);
 });
 
 
 test("Engineer object has a valid email" , () => {
-    expect(engineer.email).toBe("Bobtest.com");
+  const engineer = new Engineer()
+    
     expect(engineer.getEmail()).toEqual(engineer.email);
 }); 
 
 
-test( "Engineer object has a valid role" , () => {
+test( 'engineer object has a valid role' , () => {
+  const engineer = new Engineer();
     expect(engineer.getRole()).toEqual("Engineer");
     
 });
+ 
+module.export = {
+    Engineer}
