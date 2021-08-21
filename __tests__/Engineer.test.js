@@ -55,6 +55,10 @@ test( 'engineer object has a valid role' , () => {
     expect(engineer.getRole()).toEqual("Engineer");
     
 });
+test('engineer has a valid  github' , () => {
+  const engineer = new Engineer ('bob','1', 'acb@email','github');
+  expect(engineer.getGithub()).toEqual(engineer.github);
+});
  
 module.export = {
     Engineer}

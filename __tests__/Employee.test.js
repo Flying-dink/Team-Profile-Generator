@@ -36,3 +36,6 @@ test( "Employee object has a valid role" , () => {
     expect(employee.getRole()).toEqual("Employee");
     
 });
+module.exports = {
+    Employee
+}

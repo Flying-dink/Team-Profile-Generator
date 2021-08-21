@@ -2,9 +2,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //Team Profiles
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require( "./lib/Intern");
+const Manager = require("./lib/Manager .js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require( "./lib/Intern .js");
 const { mainModule } = require("process");
 
 
