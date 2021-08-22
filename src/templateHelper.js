@@ -1,16 +1,17 @@
-//Generate the html page
+
 const fs= require("fs");
 const path = require("path");
 const stylesheetcss = require("./stylesheetcss");
+
+
 //manager Card
+
 const generateManager = function(manager) {
-    return 
+     
     `<div class="col-4 mt-4">
     <div class="card-header">
     <h5 class="card-title">${manager.name}</h5>
      <h5 class="card-title">${icon}${manager.getRole()}</h5>
-
-    </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${manager.id}</li>
       <li class="list-group-item">Email: <a href=mailto:${manager.email}">${manager.email}<a></li>
@@ -18,15 +19,15 @@ const generateManager = function(manager) {
       
     </ul>
   </div>;` 
-}   //engineer Card
-    const generateIntern = function (engineer) {
-        return
+} 
+  //engineer Card
+
+    const generateEngineer = function (engineer) {
+    
         `<div class="col-4 mt-4">
         <div class="card-header">
         <h5 class="card-title">${engineer.name}</h5>
          <h5 class="card-title">${icon}${engineer.getRole()}</h5>
-    
-        </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.id}</li>
           <li class="list-group-item">Email: <a href=mailto:${engineer.email}">${engineer.email}<a></li>
@@ -37,20 +38,19 @@ const generateManager = function(manager) {
 
     }
 
-    //Intern Card
+    //intern Card
+
       const generateIntern = function (intern) {
-          return
+
           `<div class="col-4 mt-4">
           <div class="card-header">
           <h5 class="card-title">${intern.name}</h5>
            <h5 class="card-title">${icon}${intern.getRole()}</h5>
-      
-          </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${intern.id}</li>
             <li class="list-group-item">Email: <a href=mailto:${intern.email}">${intern.email}<a></li>
             <li class="list-group-item"School: ${intern.school}></li>
-    </div>
+    </ul>
 </div>
       };`
       
@@ -103,24 +103,24 @@ const generateManager = function(manager) {
                     }
 
                     if (role ==='Engineer') {
-                        const engineerCard = generateEngineer(employee);
+                        const EngineerCard = generateEngineer(employee);
                         pageArray.push(EngineerCard)
                     }
                 
-                if(role==='intern') {
+                    if(role==='intern') {
                     const internCard = generateIntern(employee);
 
                     pageArray.push(internCard);
                 }
 
                 }
-                
+            }
                 const employeeCards = pageArray.join('')
 
-                const generateTeam = generateTeamPage(employeeCards);
+                const generateTeamPage = generateTeamPage(employeeCards);
                 
 
-             const generateTeamPage = function(employeeCards)  {
+             const generateTeamPage = function(employeeData)  {
                  
                   `<!DOCTYPE html>
                  <html lang="en">
@@ -158,9 +158,10 @@ const generateManager = function(manager) {
              
              };
 
-            };         
-//decalre html array
+            
+                
+
         generateTeamPage()
-//push
+
 
 module.exports = generateHTML;
