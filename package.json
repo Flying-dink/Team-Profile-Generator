@@ -4,7 +4,7 @@
   "description": "A command line app that generates profiles for team members",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Flying-dink/Team-Profile-Generator#readme",
   "devDependencies": {
     "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.2"
   }
 }
