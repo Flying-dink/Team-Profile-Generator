@@ -4,7 +4,7 @@ const path = require("path");
 const stylesheetcss = require("./stylesheetcss");
 
 
-const generateTeamProfilePage = function(employeeCards) {
+
     
     //TODO:Generate Manager takes in manager and return html with manager details
     //TODO:Generate Engineer takes in manager and return html with maEngineernager details
@@ -12,22 +12,22 @@ const generateTeamProfilePage = function(employeeCards) {
 
 
 const createCards= (employees) => {
-    let finalHtml = "";
-    employees.forEach((employee) => {
+    let HTML = "";
+    employees.forEach((employeeData) => {
         let icon =
-        employee.generateTeamProfilePage() =="Manager"
+        employee.getRole() =="Manager"
         `<i class="fa-solid fa-user-tie"></i>` 
-        employees.generateTeamProfilePage()=="Engineer"
+        employees.getRole()=="Engineer"
         `<i class="fa-solid fa-glasses-round"></i>`
-        employees.generateTeamProfilePage()=="Intern"
+        employees.getRole()=="Intern"
         `<i class="fa-solid fa-graduation-cap"></i>`
-        let special = employee.officeNumber
+        let other = employee.officeNumber
             `office Number: ${employee.officeNumber}`
             employee.github
             `Github: <a href="https://github.com/${employee.github}/">${employee.github}</a>`
              `School: ${employee.school}`;
 
-             finalHTML +=` <div class="card" style="width: 18rem;">
+             HTML +=` <div class="card" style="width: 18rem;">
              <div class="card-header">
              <h5 class="card-title">${employee.name}</h5>
               <h5 class="card-title">${icon}${employee.getRole()}</h5>
@@ -36,14 +36,14 @@ const createCards= (employees) => {
              <ul class="list-group list-group-flush">
                <li class="list-group-item">ID: ${employee.id}</li>
                <li class="list-group-item">Email: <a href=mailto:${employee.email}">${employee.email}<a></li>
-               <li class="list-group-item">${}</li>
+               <li class="list-group-item">${other}</li>
              </ul>
            </div>;`
     });
-             generateHTML(finalHTML);
+             generateTeamProfilePage(HTML);
 
-             let generateHTML = (content) => {
-                 let html = `<!DOCTYPE html>
+             let generateTeamProfilePage= (content) => {
+                 let HTML = `<!DOCTYPE html>
                  <html lang="en">
                  <head>
                  
@@ -55,6 +55,7 @@ const createCards= (employees) => {
                     <script src="https://kit.fontawesome.com/876c7fe23e.js" crossorigin="anonymous"></script>
                      <title>My Team</title>
                  </head>
+                 ${content}
                  <body>
                  <div class="header">
                  <h1>My Team</h1>
@@ -68,10 +69,10 @@ const createCards= (employees) => {
 
 
                  writeToFile("index.html",html);
-                 writeToFile("stylesheet.css",());
+                 writeToFile("stylesheet.css",);
              };
              //Creates files using path and fs
-             const writeToFile =(fileName,content) => {
+             const writeToFile = (fileName,content) => {
                  //create file path
                  fs.writeFileSync(path.join(process.cwd(), "/dist/", fileName),content);
              
