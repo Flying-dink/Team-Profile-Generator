@@ -1,12 +1,13 @@
 //Generate the html page
 const fs = require("fs");
 const path = require("path");
-// const stylesheetcss = require("./stylesheetcss");
+ //const stylesheetcss = require("./stylesheetcss");
 
 //manager Card
 const generateManager = function (manager) {
-  return `<div class="col-4 mt-4">
+  return `<div class="col-6 mt-6">
     <div class="card-header">
+
     <h5 class="card-title">${manager.name}</h5>
      <h5 class="card-title"><i class="fas fa-user-tie"></i> ${manager.getRole()}</h5>
 
@@ -22,7 +23,7 @@ const generateManager = function (manager) {
 
 //engineer Card
 const generateEngineer = function (engineer) {
-  return `<div class="col-4 mt-4">
+  return `<div class="col-6 mt-6">
         <div class="card-header">
         <h5 class="card-title">${engineer.name}</h5>
          <h5 class="card-title"><i class="fas fa-glasses"></i> ${engineer.getRole()}</h5>
@@ -39,7 +40,7 @@ const generateEngineer = function (engineer) {
 
 //Intern Card
 const generateIntern = function (intern) {
-  return `<div class="col-4 mt-4">
+  return `<div class="col-6 mt-6">
           <div class="card-header">
           <h5 class="card-title">${intern.name}</h5>
            <h5 class="card-title"><i class="fas fa-graduation-cap"></i> ${intern.getRole()}</h5>
@@ -126,12 +127,21 @@ const generateTeamPage = function (content) {
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link href= "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" />
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
       <script src="https://kit.fontawesome.com/876c7fe23e.js" crossorigin="anonymous"></script>
       <title>My Team</title>
+      <link rel= "stylesheet" href= "(../dist/stylesheet.css)">
+
     </head>
     <body>
+  
+      
       <div class="header text-center">
+
         <h1>My Team</h1>
       </div>
       <main class="container main-wrapper min-vh-100">
