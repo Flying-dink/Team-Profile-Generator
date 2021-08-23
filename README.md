@@ -7,7 +7,7 @@ Jest
 Boostrap
 ## Usage
 A command line app where one answers profile questions about a team member or employee and a HTML page is generated
-https://drive.google.com/file/d/1v2070P7xqxKn_bMOoWAwbWrU_Zj-B96K/view
+https://drive.google.com/file/d/1BuIsQhPMTOYiApiiJi7bnnG5Up6NWBN3/view
 Walk through Video Link
 
 ![2021-08-22 (2)](https://user-images.githubusercontent.com/83742550/130378656-25616f71-7956-4991-bb3a-f807d53dfe01.png)
