@@ -6,21 +6,22 @@ const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const { mainModule } = require("process");
-const path = require('path')
+const path = require("path");
+
+const generatePage = require("./src/templateHelper");
 
 //Team Array
 const teamArray = [];
 
-const DIR = path.resolve(__dirname, 'output')
-const PATH = path.join(DIR,'team.html')
+const DIR = path.resolve(__dirname, "output");
+const PATH = path.join(DIR, "team.html");
 
 //render html
 //const generateHTML = require("./src/templateHelper.js");
 //const { inherits } = require('util');
 
-
 const addManager = () => {
-   inquirer
+  inquirer
     .prompt([
       {
         type: "input",
@@ -70,13 +71,10 @@ const addManager = () => {
     });
 };
 
-
-
-
 //Adding  employees to the team
 const addEmployee = () => {
   console.log("adding employees to the team");
-   inquirer
+  inquirer
     .prompt([
       {
         type: "list",
@@ -120,39 +118,31 @@ const addEmployee = () => {
 
     .then((employeeData) => {
       //data for employee types
-      let { name, id, email, role, github, school, confirmAddEmployee } =
-        employeeData;
+      let { name, id, email, role, github, school, confirmAddEmployee } = employeeData;
       let employee;
       if (role === "Engineer") {
         employee = new Engineer(name, id, email, github);
         console.log(employee);
       } else if (role === "Intern") {
-        employee = new intern(name, id, email, school);
+        employee = new Intern(name, id, email, school);
         console.log(employee);
       }
       teamArray.push(employee);
       if (confirmAddEmployee) {
-          //call add employee functions
-        //return confirmAddEmployee(teamArray);
+        addEmployee();
       } else {
-          console.log(teamArray)
-        return teamArray;
+        console.log(teamArray);
+        
+        generatePage(teamArray);
       }
     });
 };
 
 //
 
-
 //function to initialize app
-function init(){
-     addManager()
-    //console.log("Generating html page");
-    //pass render function as second param on line 148. render function froms from templateHelper.js
-   // fs.writeFileSync(PATH,)
-    //writeToFile("html", generateHTML({ teamArray }));
-
-
+function init() {
+  addManager();
 }
 
 init();
